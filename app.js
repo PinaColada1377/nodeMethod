@@ -23,16 +23,14 @@ const server = http.createServer((req, res) => {
             });
             req.on('end', () => {
                 let params = JSON.parse(JSON.stringify(parse(body)));
-                users.push(params)
-                console.log(users)
+                users.push(params);
                 res.end('ok');
             })
         } else if (req.method == 'PUT'){
-            users = [];
-    
+            users = [];    
             res.end('ok');
         } else {
-            res.end('Method absent')
+            res.end('Method absent');
         }
     } else {
         res.end ('Server working...');
